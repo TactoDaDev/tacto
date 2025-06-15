@@ -400,7 +400,7 @@ strong{
 
 .instagram-button img {
     width: auto;
-    height: 10px; /* Adjust this value to fit your design */
+    height: 50px; /* Adjust this value to fit your design */
     object-fit: contain;
 }
 
