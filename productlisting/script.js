@@ -1,19 +1,16 @@
-const imgs = document.querySelectorAll('.img-select a');
-const imgBtns = [...imgs];
-let imgId = 1;
+var swiper = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: ".swiper-next-button",
+    prevEl: ".swiper-prev-button" },
 
-imgBtns.forEach((imgItem) => {
-    imgItem.addEventListener('click', (event) => {
-        event.preventDefault();
-        imgId = imgItem.dataset.id;
-        slideImage();
-    });
+  effect: "fade",
+  loop: "infinite",
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction" } });
+
+
+
+swiper.on('slideChange', function (sld) {
+  document.body.setAttribute('data-sld', sld.realIndex);
 });
-
-function slideImage(){
-    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
-
-    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
-}
-
-window.addEventListener('resize', slideImage);
