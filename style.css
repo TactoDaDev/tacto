@@ -399,8 +399,9 @@ strong{
 }
 
 .instagram-button img {
-    border-radius: 50%;
-    transition: transform 0.2s ease-in-out;
+    width: auto;
+    height: 50px; /* Adjust this value to fit your design */
+    object-fit: contain;
 }
 
 .instagram-button img:hover {
